@@ -1,6 +1,6 @@
-import Paddle from "/src/paddle.js";
-import InputHandler from "/src/input.js";
-import Ball from "/src/ball.js";
+import Paddle from "src/paddle.js";
+import InputHandler from "src/input.js";
+import Ball from "src/ball.js";
 
 const FIELD_WIDTH = 800;
 const FIELD_HEIGHT = 600;
@@ -17,15 +17,6 @@ let context = canvas.getContext('2d');
 let scoreOne_div = document.getElementById("scoreOne");
 let scoreTwo_div = document.getElementById("scoreTwo");
 let winnerText = document.getElementById("winnerText");
-
-//clearRect clears everything from the screen if
-//context.clearRect(0, 0, 800, 600)
-
-//fillStyle can add color to the context
-//context.fillStyle = "#f00"
-
-//fillRect creates a rectangle, x, y, width, height
-//context.fillRect(50, 50, 50, 100);
 
 let paddleOne = new Paddle(FIELD_WIDTH, FIELD_HEIGHT, "left");
 let paddleTwo = new Paddle(FIELD_WIDTH, FIELD_HEIGHT, "right");
@@ -69,22 +60,16 @@ function frame(timeStamp) {
   //to reiterate, rAF calls frame and gives it a timestamp, that can be used
 }
 
-//window.requestAnimationFrame(frame);
-
 function game() {
-  if (!playId) {
     playId = window.requestAnimationFrame(frame);
     startMenu.style.setProperty("display", "none");
     pauseMenu.style.setProperty("display", "none");
-  }
 }
 
 function pause() {
-  if (playId) {
     window.cancelAnimationFrame(playId);
     playId = undefined;
     pauseMenu.style.setProperty("display", "block");
-  }
 }
 
 function reset() {
@@ -132,3 +117,4 @@ document.addEventListener("keydown", (event) => {
 });
 resetButton.addEventListener("click", reset);
 replayButton.addEventListener("click", reset);
+
