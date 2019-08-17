@@ -1,7 +1,7 @@
 export default class Ball {
 
   constructor(fieldWidth, fieldHeight, paddleOne, paddleTwo, playerOneScore, playerTwoScore) {
-    this.possibleDirs = [35, -35];
+    this.possibleDirs = [42, -42];
     this.fieldHeight = fieldHeight;
     this.fieldWidth = fieldWidth;
     this.paddleOne = paddleOne;

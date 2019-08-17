@@ -110,7 +110,7 @@ function reset() {
 }
 
 function isGameOver() {
-  if (ball.playerOneScore >= 1 || ball.playerTwoScore >= 1) {
+  if (ball.playerOneScore >= 10 || ball.playerTwoScore >= 10) {
     input = null;
     (ball.playerOneScore > ball.playerTwoScore)
       ? winnerText.innerHTML = "Player 1 WINS!!!"
