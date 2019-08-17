@@ -5,12 +5,22 @@
 
 body {
   background-color: #222;
-  color: #EEE;
+  color: #eee;
 }
 
 
 #gameField {
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
 }
 
+.startMenu {
+  display: block;
+}
 
+.pauseMenu {
+  display: none;
+}
+
+.replayMenu {
+  display: none;
+}

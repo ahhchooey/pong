@@ -11,15 +11,69 @@
   </div>     
 
   <div class="scoreBoard">
-    <div id="scoreOne"></div>
-    <div id="scoreTwo"></div>
+    <div id="scoreOne">0</div>
+    <div id="scoreTwo">0</div>
   </div>
 
   <canvas id="gameField" width="800" height="600"></canvas>
 
-  <div class="endCard">
-    <p id="endCardText"></p>
-    <button type=button>Replay</button>
+  <div class="startMenu">
+    <div id="startButton">Start</div>
+    <p>Controls</p>
+    <table>
+      <tr>
+        <td>Q</td>
+        <td>Player1 Move Up</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>Player1 Move Down</td>
+      </tr>
+      <tr>
+        <td>Up Arrow</td>
+        <td>Player2 Move Up</td>
+      </tr>
+      <tr>
+        <td>Down Arrow</td>
+        <td>Player2 Move Down</td>
+      </tr>
+      <tr>
+        <td>ESC</td>
+        <td>Pause</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="pauseMenu">
+    <div id="resetButton">Reset</div>
+    <p>Controls</p>
+    <table>
+      <tr>
+        <td>Q</td>
+        <td>Player1 Move Up</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>Player1 Move Down</td>
+      </tr>
+      <tr>
+        <td>Up Arrow</td>
+        <td>Player2 Move Up</td>
+      </tr>
+      <tr>
+        <td>Down Arrow</td>
+        <td>Player2 Move Down</td>
+      </tr>
+      <tr>
+        <td>ESC</td>
+        <td>Resume</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="replayMenu">
+    <div id="winnerText"></div>
+    <div id="replayButton">Replay</div>
   </div>
 
   <script type="module" src="src/index.js"></script>

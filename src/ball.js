@@ -1,6 +1,6 @@
 export default class Ball {
 
-  constructor(fieldWidth, fieldHeight, paddleOne, paddleTwo) {
+  constructor(fieldWidth, fieldHeight, paddleOne, paddleTwo, playerOneScore, playerTwoScore) {
     this.possibleDirs = [35, -35];
     this.fieldHeight = fieldHeight;
     this.fieldWidth = fieldWidth;
@@ -14,6 +14,8 @@ export default class Ball {
       x: fieldWidth / 2,
       y: fieldHeight / 2
     };
+    this.playerOneScore = 0;
+    this.playerTwoScore = 0;
   }
 
   render(context) {
@@ -28,13 +30,9 @@ export default class Ball {
     this.speedy = -this.speedy * 1.10;
   }
 
-  bounceHoriztontal() {
+  bounceHoriztontal(paddle) {
     this.speedx = -this.speedx * 1.10;
-  }
-
-  score(playerOneScore, playerTwoScore) {
-    if (this.position + this.diameter < 0) {playerTwoScore++};
-    if (this.position + this.diameter > fieldWidth) {playerOneScore++}
+    this.speedy += paddle.speed * 0.10; 
   }
 
   resetBall() {
@@ -46,7 +44,7 @@ export default class Ball {
     this.speedx = this.possibleDirs[Math.floor(Math.random() * this.possibleDirs.length)];
   }
 
-  move(timeDelta, playerOneScore, playerTwoScore) {
+  move(timeDelta) {
     this.position.x += this.speedx / timeDelta;
     this.position.y += this.speedy / timeDelta;
 
@@ -63,22 +61,22 @@ export default class Ball {
     if (this.position.x > paddleTwoLeft &&
       this.position.y < paddleTwoBottom &&
       this.position.y > paddleTwoTop) {
-      this.bounceHoriztontal()
+      this.bounceHoriztontal(this.paddleTwo)
     };
 
     if (this.position.x < paddleOneRight &&
       this.position.y < paddleOneBottom &&
       this.position.y > paddleOneTop) {
-      this.bounceHoriztontal()
+      this.bounceHoriztontal(this.paddleOne)
     };
 
-    if (this.position.x < 0) {
-      playerTwoScore++;
+    if (this.position.x < 0 - this.diameter) {
+      this.playerTwoScore++;
       this.resetBall();
     };
 
-    if (this.position.x > this.fieldWidth) {
-      playerOneScore++;
+    if (this.position.x > this.fieldWidth + this.diameter) {
+      this.playerOneScore++;
       this.resetBall();
     };
   }
