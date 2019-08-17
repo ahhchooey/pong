@@ -1,6 +1,6 @@
-import Paddle from "src/paddle.js";
-import InputHandler from "src/input.js";
-import Ball from "src/ball.js";
+import Paddle from "/src/paddle.js";
+import InputHandler from "/src/input.js";
+import Ball from "/src/ball.js";
 
 const FIELD_WIDTH = 800;
 const FIELD_HEIGHT = 600;
@@ -61,15 +61,19 @@ function frame(timeStamp) {
 }
 
 function game() {
+  if (!playId) {
     playId = window.requestAnimationFrame(frame);
     startMenu.style.setProperty("display", "none");
     pauseMenu.style.setProperty("display", "none");
+  }
 }
 
 function pause() {
+  if (playId) {
     window.cancelAnimationFrame(playId);
     playId = undefined;
     pauseMenu.style.setProperty("display", "block");
+  }
 }
 
 function reset() {
