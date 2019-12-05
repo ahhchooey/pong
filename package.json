@@ -1,0 +1,31 @@
+{
+  "name": "pong",
+  "version": "1.0.0",
+  "description": "pong game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahhchooey/pong.git"
+  },
+  "keywords": [
+    "pong",
+    "game",
+    "multiplayer"
+  ],
+  "author": "alex chui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahhchooey/pong/issues"
+  },
+  "homepage": "https://github.com/ahhchooey/pong#readme",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
+  }
+}
